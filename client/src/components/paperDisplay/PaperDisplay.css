@@ -1,0 +1,70 @@
+/* Home.css */
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  background: #f3f4f6;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.home-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+/* Grid for departments */
+.department-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  width: 80%;
+  max-width: 900px;
+  padding: 20px;
+}
+
+/* Department card (adapted from paper-card) */
+.department-btn {
+  background-color: #f0f2f5;
+  box-shadow: 8px 8px 16px #cacbcc, -8px -8px 16px #ffffff;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Hover effect */
+.department-btn:hover {
+  transform: translateY(-6px);
+  box-shadow: 10px 10px 20px #cacbcc, -10px -10px 20px #ffffff;
+}
+
+/* Active (click) effect */
+.department-btn:active {
+  box-shadow: inset 6px 6px 12px #cacbcc, inset -6px -6px 12px #ffffff;
+  transform: scale(0.97);
+}
+
+/* Department-specific accent colors */
+.department-btn:nth-child(1) {
+  color: #2563eb; /* CE → Blue */
+}
+.department-btn:nth-child(2) {
+  color: #16a34a; /* CSE → Green */
+}
+.department-btn:nth-child(3) {
+  color: #f97316; /* IT → Orange */
+}

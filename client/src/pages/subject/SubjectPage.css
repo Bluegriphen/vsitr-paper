@@ -1,0 +1,88 @@
+.subject-page {
+  padding: 2rem;
+  background: #e0e5ec; /* Soft gray background for neu style */
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.subject-page h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+  text-align: center;
+}
+
+.paper-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.paper-card {
+  background: #e0e5ec;
+  border-radius: 20px;
+  box-shadow: 
+    10px 10px 20px #babecc,
+    -10px -10px 20px #ffffff;
+  padding: 1.5rem;
+  width: 280px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.paper-card:hover {
+  transform: translateY(-5px);
+}
+
+.paper-header {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* Neumorphism-style button */
+.download-btn {
+  display: block;
+  margin: 0 auto;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #e0e5ec;
+  border-radius: 12px;
+  box-shadow: 
+    4px 4px 8px #babecc,
+    -4px -4px 8px #ffffff;
+  text-align: center;
+  font-weight: bold;
+  color: #3498db;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.download-btn:hover {
+  color: #2980b9;
+  box-shadow: 
+    inset 2px 2px 5px #babecc,
+    inset -2px -2px 5px #ffffff;
+}
+
+@media (max-width: 600px) {
+  .paper-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .paper-card {
+    width: 90%;
+  }
+}
+
+@media (max-width:480px){
+  .subject-page h2 {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #333;
+  text-align: center;
+}
+}

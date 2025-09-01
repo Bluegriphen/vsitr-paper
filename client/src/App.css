@@ -1,0 +1,49 @@
+/* Global reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: #e0e5ec;
+  color: #333;
+  line-height: 1.6;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #e0e5ec;
+  margin: 5px;
+}
+
+.content-wrap {
+  flex: 1;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  width: 100%; /* Fixed from 200% */
+}
+@media (max-width: 768px) {
+  .content-wrap {
+    padding: 15px;
+    margin: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-wrap {
+    padding: 10px;
+    margin: 5px;
+  }
+}
