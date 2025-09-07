@@ -1,0 +1,89 @@
+.add-paper-form {
+  max-width: 420px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(30,41,59,0.08);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.add-paper-form h2 {
+  color: #1e293b;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.add-paper-form input {
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f8fafc;
+  color: #1e293b;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.add-paper-form input:focus {
+  border-color: #38bdf8;
+}
+
+.add-paper-form button {
+  padding: 12px;
+  background: #38bdf8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.add-paper-form button:hover {
+  background: #0ea5e9;
+}
+
+.success {
+  color: #22c55e;
+  text-align: center;
+}
+
+.error {
+  color: #ef4444;
+  text-align: center;
+}
+
+/* 📱 Responsive adjustments */
+@media (max-width: 600px) {
+  .add-paper-form {
+    max-width: 95%;
+    padding: 20px 18px;
+    gap: 12px;
+  }
+
+  .add-paper-form h2 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .add-paper-form button {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}
+
+/* 🖱️ Subtle input hover effect */
+.add-paper-form input:hover {
+  border-color: #94a3b8;
+}
+
+/* 🔄 Disabled button style */
+.add-paper-form button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}

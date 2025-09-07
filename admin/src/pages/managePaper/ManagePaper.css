@@ -1,0 +1,101 @@
+.manage-paper {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.manage-paper h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.paper-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.paper-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9f9f9;
+  margin-bottom: 12px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  transition: background 0.2s ease;
+}
+
+.paper-item:hover {
+  background: #f1f5f9;
+}
+
+.paper-item span {
+  flex: 1;
+  font-size: 1rem;
+  color: #444;
+}
+
+.paper-item a {
+  margin: 0 10px;
+  font-size: 0.9rem;
+  color: #0077ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.paper-item a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.paper-item button {
+  background: #0077ff;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  margin-left: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s ease;
+}
+
+.paper-item button:hover {
+  background: #005fcc;
+}
+
+.paper-item button:last-child {
+  background: #dc2626; /* delete button red */
+}
+
+.paper-item button:last-child:hover {
+  background: #b91c1c;
+}
+
+/* Edit form */
+.edit-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.edit-form input {
+  flex: 1 1 150px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.edit-form button {
+  flex: 0 0 auto;
+}

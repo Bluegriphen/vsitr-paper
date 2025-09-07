@@ -1,0 +1,30 @@
+
+npm install firebase
+
+// ...existing code...
+import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
+import { useContext, createContext } from "react";
+import { db } from "../firebase"; // adjust path if needed
+
+const FirebaseContext = createContext();
+
+export const useFirebase = () => useContext(FirebaseContext);
+
+export const FirebaseProvider = ({ children }) => {
+  // Fetch all papers
+  const getPapers = async () => {
+    const snapshot = await getDocs(collection(db, "papers"));
+    return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+  };
+
+  // Delete a paper by ID
+  const deletePaper = async (id) => {
+    await deleteDoc(doc(db, "papers", id));
+  };
+
+  return (
+    <FirebaseContext.Provider value={{ getPapers, deletePaper }}>
+      {children}
+    </FirebaseContext.Provider>
+  );
+};

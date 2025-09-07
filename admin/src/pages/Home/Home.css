@@ -1,0 +1,36 @@
+.admin-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.sidebar {
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+  padding: 48px 32px 24px 32px; 
+  background: #f3f6fa;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 0 0 12px 12px;
+}
+
+@media (max-width: 900px) {
+  .main {
+    flex-direction: column;
+  }
+  .content {
+    padding: 24px 8px;
+  }
+}

@@ -17,18 +17,16 @@ A web application for VSITR Collage where professor can upload question papers a
 ## Project Structure
 
 vsitr-paper/
-|--admin/ #Admin frontend (React)
+|--admin/ #Admin portal (React, Firebase Auth, Firestore, Hosting)
 |--client/ #Client frontend(React)
-|--server/ #Backend (Node.js/Express + Database)
 |-- README.md #Documentation
 
 ---
 
 ## Teach Stack
 
-- **Frontend (Admin & Client):** React.js, css
-- **Backend** Node.js, Express.js
-- **Database:** MySQL/MongoDB
+- **Frontend (Admin & Client):** React.js, css, Firebase
+- **Database:** Firestore database
 - **Version Control:** git & github
 
 ---
@@ -45,21 +43,18 @@ vsitr-paper/
    cd admin && npm install
    FOR Client:
    cd ../client && npm install
-   For Server :
-   cd ../server && npm install
 
 3. Run the applications
    Admin:
    cd admin && npm run dev
    client:
    cd client && npm run dev
-   server:
-   cd server && npm start
 
 ## Screenshots
 
 Home ![Home Page](./assets/Home.jpg)
+Admin Page: ![Admin Dashboard](./assets/AdminDashboard.png)
 
 ## Author
 
-    Priyanka Solanki - Developer of VSITR Paper Portal.
+    Priyanka Solanki - Developer of VSITR Paper Portal and Admin portal.

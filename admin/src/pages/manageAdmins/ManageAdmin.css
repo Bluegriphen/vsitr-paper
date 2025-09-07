@@ -1,0 +1,83 @@
+.manage-admin-page {
+  max-width: 700px;
+  margin: 30px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.manage-admin-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.add-admin-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-admin-form input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.add-admin-form button {
+  background: #0077ff;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.add-admin-form button:hover {
+  background: #005fcc;
+}
+
+.admin-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  margin-bottom: 10px;
+  padding: 12px 15px;
+  border-radius: 6px;
+  border: 1px solid #e5e5e5;
+}
+
+.admin-item span {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.admin-item button {
+  background: #dc2626;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.admin-item button:hover {
+  background: #b91c1c;
+}
+
+.message {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #0077ff;
+  font-size: 0.9rem;
+}
