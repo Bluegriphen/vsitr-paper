@@ -48,9 +48,7 @@
   font-size: 0.95em;
 }
 
-/* 📱 Responsive Design */
 
-/* Tablet */
 @media (max-width: 900px) {
   .recent-activity {
     max-width: 100%;
@@ -58,7 +56,7 @@
   }
 }
 
-/* Mobile */
+
 @media (max-width: 600px) {
   .activity-item {
     flex-direction: column;
@@ -72,7 +70,7 @@
   }
 }
 
-/* Small Mobile */
+
 @media (max-width: 400px) {
   .recent-activity-title {
     font-size: 1rem;

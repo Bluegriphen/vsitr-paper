@@ -23,7 +23,8 @@ const Header = () => {
         <Link to="/home" className="logo-link">
           <img src="/logo.png" alt="Logo" className="logo" />
         </Link>
-        <h1 className="header-title">VSITR | Question Paper</h1>
+        <h1 className="header-title">VSITR Paper Portal - Admin</h1>
+        
       </div>
 
       <nav className="header-nav">

@@ -1,21 +1,45 @@
-import { createContext, useContext } from "react";
-import { initializeApp } from "firebase/app";
+import { useContext, createContext, useEffect, useState } from "react";
+import { db } from "../firebase/firebase";
+import { collection, getDocs } from "firebase/firestore";
 
-const FirebaseContext = createContext(null);
+const FirebaseContext = createContext();
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAjCJu7PHrDLDvYpIy_C3TSLbrQs9bnMW0",
-  authDomain: "vsitr-paper.firebaseapp.com",
-  projectId: "vsitr-paper",
-  storageBucket: "vsitr-paper.firebasestorage.app",
-  messagingSenderId: "52377845930",
-  appId: "1:52377845930:web:c2b978b35a598de829d0d3",
+export const FirebaseProvider = ({ children }) => {
+  const [papers, setPapers] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const fetchPapers = async () => {
+    const snapshot = await getDocs(collection(db, "papers"));
+    setPapers(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+  };
+
+  useEffect(() => {
+    fetchPapers();
+  }, []);
+
+  const getFilteredPapers = (department, semester, code) => {
+    return papers.filter(
+      (item) =>
+        item.department === department &&
+        String(item.semester) === String(semester) &&
+        (!code || item.code.toLowerCase() === code.toLowerCase())
+    );
+  };
+
+  return (
+    <FirebaseContext.Provider
+      value={{
+        db,
+        papers,
+        fetchPapers,
+        searchTerm,
+        setSearchTerm,
+        getFilteredPapers,
+      }}
+    >
+      {children}
+    </FirebaseContext.Provider>
+  );
 };
 
 export const useFirebase = () => useContext(FirebaseContext);
-
-const firebaseApp = initializeApp(firebaseConfig);
-
-export const FirebaseProvider = (props) => {
-  return <FirebaseContext.Provider>{props.children}</FirebaseContext.Provider>;
-};

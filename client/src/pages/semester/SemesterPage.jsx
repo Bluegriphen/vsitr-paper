@@ -1,24 +1,26 @@
 import { useParams, Link } from "react-router-dom";
-import { usePaperContext } from "../../context/Papercontext";
+import { useFirebase } from "../../context/Firebasecontext"; 
 import "./SemesterPage.css";
 
 const SemesterPage = () => {
   const { department, semester } = useParams();
-  const { paper } = usePaperContext();
+  const { papers } = useFirebase(); 
 
   const semesterNum = parseInt(semester, 10);
 
   const getSubjects = () => {
-    const subjects = paper
+    const subjects = papers
       .filter(
-        (item) => item.department === department && item.semester == semesterNum
+        (item) =>
+          item.department === department &&
+          parseInt(item.semester, 10) === semesterNum
       )
       .map((item) => ({
         code: item.code,
         subject: item.subject,
       }));
 
-    // Get unique subject codes
+    // ✅ Ensure unique subjects by code
     const uniqueCodes = [
       ...new Map(subjects.map((item) => [item.code, item])).values(),
     ];
@@ -42,7 +44,7 @@ const SemesterPage = () => {
               to={`/${department}/${semester}/${item.code}`}
               className="subject-link"
             >
-              {item.code}
+              {item.code} – {item.subject}
             </Link>
           ))
         ) : (

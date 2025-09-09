@@ -1,15 +1,14 @@
 import "./SearchBar.css";
-import { usePaperContext } from "../../context/Papercontext";
+import { useFirebase } from "../../context/Firebasecontext";
 import { Link } from "react-router-dom";
 
 const SearchBar = () => {
-  const { searchTerm, setSearchTerm, paper } = usePaperContext();
+  const { papers, searchTerm, setSearchTerm } = useFirebase();
 
-  // Filter only by code
   const filteredPapers =
     searchTerm.trim() === ""
       ? []
-      : paper.filter((item) =>
+      : papers.filter((item) =>
           item.code.toLowerCase().includes(searchTerm.toLowerCase())
         );
 
@@ -27,7 +26,6 @@ const SearchBar = () => {
         className="search-bar"
       />
 
-      {/* Show results */}
       {searchTerm && (
         <div className="search-results">
           {uniquePapers.length > 0 ? (
@@ -38,7 +36,7 @@ const SearchBar = () => {
                 className="search-result-item"
                 onClick={() => setSearchTerm("")}
               >
-                {item.code} - {item.subject}
+                {item.code} – {item.subject}
               </Link>
             ))
           ) : (

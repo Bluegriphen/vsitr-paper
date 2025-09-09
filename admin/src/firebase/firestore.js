@@ -8,3 +8,4 @@ export const getPapers = async () => {
 export const addPaper = async (paper) => {
   await addDoc(collection(db, "papers"), paper);
 };
+
